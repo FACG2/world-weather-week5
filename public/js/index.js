@@ -7,7 +7,8 @@ cityInput.addEventListener('keyup',()=>{
 	 } )
 })
 
-cityButton.addEventListener('submit',()=>{
+cityButton.addEventListener('click',(event)=>{
+	event.preventDefault();
 	 post('/submit',cityName.value,(res)=>{
 	 	console.log(res);
 	 } )
