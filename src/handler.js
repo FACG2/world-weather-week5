@@ -3,7 +3,6 @@ const fs=require('fs');
 const request=require('./request.js');
 function publicHandler(req,res) {
   var url =req.url;
-  console.log('hana',url);
    if (url == '/') {
     url = '/public/index.html';
     }
@@ -16,8 +15,6 @@ function publicHandler(req,res) {
       js: 'application/javascript',
       ico:'image/x-icon'
     };
-    var hana=__dirname + '/..' + url;
-    console.log(hana);
     fs.readFile(__dirname + '/..' + url, (err, data) => {
       if (err) {
         res.writeHead(500, {
@@ -40,11 +37,18 @@ allData+=chunk;
   req.on('end',function () {
 var result=functions.getTenCities(allData);
 res.end(JSON.stringify(result));
-console.log('hana',functions.getTenCities(allData));
   });
 }
 function submitHandler(req,res) {
-request.apiRequest('2172797',function (body) {
+  var allData='';
+  var result;
+  req.on('data',function (chunk) {
+allData+=chunk;
+  });
+  req.on('end',function () {
+result=functions.getCityIdBycityName(allData);
+  });
+request.apiRequest(result,function (body) {
   res.end(JSON.stringify(body));
 });
 }
