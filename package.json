@@ -4,11 +4,12 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon 'src/server.js'"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "request": "^2.81.0",
     "tape": "^4.8.0"
   },
   "devDependencies": {
