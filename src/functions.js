@@ -32,8 +32,8 @@ function toCelsius(kelvin){
 }
 
 module.exports = {
-  getCityByID: getCityByID,
-  getTenCities: getTenCities,
-  toCelsius: toCelsius,
-  getCityIdBycityName: getCityIdBycityName,
+  getCityByID,
+  getTenCities,
+  toCelsius,
+  getCityIdBycityName
 }

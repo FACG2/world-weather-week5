@@ -1,3 +1,4 @@
+var functions= require('./functions.js');
 const fs=require('fs');
 const request=require('./request.js');
 function publicHandler(req,res) {
@@ -37,8 +38,15 @@ function searchHandler(req,res) {
 allData+=chunk;
   });
   req.on('end',function () {
-
+var result=functions.getTenCities(allData);
+res.end(JSON.stringify(result));
+console.log('hana',functions.getTenCities(allData));
   });
+}
+function submitHandler(req,res) {
+request.apiRequest('2172797',function (body) {
+  res.end(JSON.stringify(body));
+});
 }
 function noPageHandler(req,res) {
   res.writeHead(404, { 'Content-Type': 'text/html'});
@@ -46,5 +54,7 @@ function noPageHandler(req,res) {
 }
 module.exports={
   publicHandler,
+  searchHandler,
+  submitHandler,
   noPageHandler
 }
