@@ -9,7 +9,12 @@
 </head>
 
 <body>
-
+	<form id="seach-form">
+        <input id="cityName" list="citieslist" placeholder="city name" type="text" name="cityname" value="" required>
+        <datalist id="citieslist">
+        </datalist>
+        <button id="serchButton" type="submit" name="">Search</button>
+    </form>
 
   <script src="public/js/request.js"></script>
   <script src="public/js/index.js"></script>

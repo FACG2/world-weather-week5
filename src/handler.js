@@ -47,10 +47,11 @@ allData+=chunk;
   });
   req.on('end',function () {
 result=functions.getCityIdBycityName(allData);
-  });
-request.apiRequest(result,function (body) {
+  request.apiRequest(result,function (body) {
   res.end(JSON.stringify(body));
 });
+  });
+
 }
 function noPageHandler(req,res) {
   res.writeHead(404, { 'Content-Type': 'text/html'});
