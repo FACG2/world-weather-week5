@@ -54,7 +54,7 @@ An app that uses  API to display current and tommorrow weather data for any city
 
 Navigate to http://localhost:4000/ in your browser
 
-[check the site]("https://weathergaza.herokuapp.com/")
+[check the site](https://weathergaza.herokuapp.com/)
 
 
 
