@@ -13,13 +13,15 @@ cityInput.addEventListener('keyup',()=>{
 cityButton.addEventListener('click',(event)=>{
 	event.preventDefault();
 	 post('/submit',cityName.value,(res)=>{
+		//  console.log(res);
 	 	if(res === "city does not exist"){
 	 		ifCityNotFound();
 	 	}else{
-	 		showWeather(res);	
+			console.log(res);
+	 		showWeather(res);
 	 	}
 
-	 	
+
 	 })
 })
 
@@ -38,16 +40,15 @@ function showSug(data){
 //{description: "scattered clouds", icon: "http://openweathermap.org/img/w/03n.png", temp: "28.00", pressure: 1009, humidity: 74}
 function showWeather(data){
 
-	if(dateDay != null){
 		weatherDive.innerHTML="";
 		cityInput.value="";
 		OptionList.innerHTML="";
 
 		var d = new Date();
 		var dateDay=document.createElement('h3');
-		humidity.classList.add('humidity');
-		humidity.textContent=data.humidity;
-		weatherDive.appendChild(humidity);
+		dateDay.classList.add('dateDay');
+		dateDay.textContent=d.toDateString();
+		weatherDive.appendChild(dateDay);
 
 		var temp=document.createElement('h3');
 		temp.classList.add('cityTemp');
@@ -68,7 +69,7 @@ function showWeather(data){
 		pressure.classList.add('pressure');
 		pressure.textContent=data.pressure;
 		weatherDive.appendChild(pressure);
-		
+
 		var humidity=document.createElement('h3');
 		humidity.classList.add('humidity');
 		humidity.textContent=data.humidity;
@@ -76,11 +77,6 @@ function showWeather(data){
 
 
 	}
-		
-
-
-	}
-
 
 function ifCityNotFound(){
 	weatherDive.innerHTML = "";
@@ -90,6 +86,3 @@ function ifCityNotFound(){
 		notFound.textContent="Oops! there is no City matches your search!";
 		weatherDive.appendChild(notFound);
 }
-
-
-
