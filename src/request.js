@@ -13,7 +13,7 @@ function apiRequest(id,cb) {
     var detalis={};
          detalis.description = fullData.weather[0].description;
          detalis.icon = "http://openweathermap.org/img/w/" + fullData.weather[0].icon+".png";
-         detalis.temp=functions.toCelsius(fullData.main.temp);
+         detalis.temp=parseInt(functions.toCelsius(fullData.main.temp));
          detalis.pressure=fullData.main.pressure;
          detalis.humidity=fullData.main.humidity;
 

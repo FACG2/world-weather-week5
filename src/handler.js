@@ -55,7 +55,7 @@ result=functions.getCityIdBycityName(allData);
 }
 function noPageHandler(req,res) {
   res.writeHead(404, { 'Content-Type': 'text/html'});
- res.end('<h1>Not found</h1>');
+ res.end('<center><h1>404 Page Not found</h1></center>');
 }
 module.exports={
   publicHandler,
