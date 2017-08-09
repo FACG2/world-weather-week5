@@ -24,7 +24,9 @@ var countryName = sp[1];
 
 for (var i = 0; i < list.length; i++) {
   if(list[i].name === cityName && list[i].country === countryName) return list[i].id;
+
 }
+return -1;
 }
 
 function toCelsius(kelvin){
