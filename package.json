@@ -4,7 +4,10 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "nodemon 'src/server.js'"
+    "start": "node 'src/server.js'",
+    "test": "node tests/router.test.js | tap-spec",
+    "coverage": "node ./node_modules/.bin/istanbul cover tests/router.test.js",
+    "server": "nodemon 'src/server.js'"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +16,7 @@
     "tape": "^4.8.0"
   },
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "nodemon": "^1.11.0",
     "shot": "^3.4.2",
     "tap-spec": "^4.1.1"

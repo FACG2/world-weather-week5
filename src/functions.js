@@ -1,10 +1,5 @@
 var list = require('../lib/list.json');
 
-function getCityByID(cityId) {
-  for (var i = 0; i < list.length; i++) {
-    if(list[i].id === cityId) return list[i];
-  }
-}
 
 function getTenCities(input){
   var arr = [];
@@ -33,9 +28,19 @@ function toCelsius(kelvin){
   return (kelvin - 273.15).toFixed(2);
 }
 
+function timeConverter(UNIX_timestamp){
+var a = new Date(UNIX_timestamp * 1000);
+var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var year = a.getFullYear();
+var month = months[a.getMonth()];
+var date = a.getDate();
+var time = date + ' ' + month + ' ' + year;
+return time;
+}
+
 module.exports = {
-  getCityByID,
   getTenCities,
   toCelsius,
-  getCityIdBycityName
+  getCityIdBycityName,
+  timeConverter
 }
