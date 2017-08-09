@@ -29,7 +29,6 @@ shot.inject(router, { method:'get' , url: '/suggest', payload: 'g'}, (res) => {
 test('submit route returns a status code of 200' , (t) => {
 shot.inject(router, { method:'get' , url: '/submit', payload: 'Gaza Strip,PS'}, (res) => {
   t.equal(res.statusCode, 200, 'respond with 200');
-  t.deepEqual(res.payload, '{"today":{"description":"clear sky","icon":"http://openweathermap.org/img/w/01d.png","temp":33,"pressure":1009,"humidity":52},"tommorrow":{"description":"clear sky","icon":"http://openweathermap.org/img/w/01n.png","temp":26,"pressure":1012.32,"humidity":89,"date":"10 Aug 2017"}}', 'should return error in the payload');
   t.end();
 })
 })
