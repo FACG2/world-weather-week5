@@ -48,12 +48,19 @@ allData+=chunk;
   req.on('end',function () {
 result=functions.getCityIdBycityName(allData);
 if (result === -1) {
-  res.end(JSON.stringify('city does not exist'));  
+  res.end(JSON.stringify('city does not exist'));
 }else{
-request.apiRequest(result,function (body) {
-
+request.currentWeather(result,function (today){
+request.tommorrowWeather(result,function(tommorrow){
+var body ={
+  'today': today,
+  'tommorrow':tommorrow
+}
+console.log(body);
   res.end(JSON.stringify(body));
-  });}
+
+
+});  });}
 });
 
 
