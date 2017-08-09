@@ -38,6 +38,9 @@ allData+=chunk;
 var result=functions.getTenCities(allData);
 res.end(JSON.stringify(result));
   });
+  req.on('error',function () {
+    res.end('no suggestion');
+  })
 }
 function submitHandler(req,res) {
   var allData='';
@@ -48,8 +51,11 @@ allData+=chunk;
   req.on('end',function () {
 result=functions.getCityIdBycityName(allData);
 if (result===-1) {
-  res.end('city does not exist');  
+  res.end('city does not exist');
 }
+req.on('error',function () {
+  res.end('city does not exist');
+})
 request.apiRequest(result,function (body) {
   res.end(JSON.stringify(body));
   });
