@@ -38,6 +38,9 @@ allData+=chunk;
 var result=functions.getTenCities(allData);
 res.end(JSON.stringify(result));
   });
+  req.on('error',function () {
+    res.end('no suggestion');
+  })
 }
 function submitHandler(req,res) {
   var allData='';
@@ -47,16 +50,22 @@ allData+=chunk;
   });
   req.on('end',function () {
 result=functions.getCityIdBycityName(allData);
-if (result === -1) {
-  res.end(JSON.stringify('city does not exist'));  
-}else{
+
+if (result===-1) {
+  res.end('city does not exist');
+}
+
+
+else{
 request.apiRequest(result,function (body) {
 
   res.end(JSON.stringify(body));
   });}
 });
 
-
+req.on('error',function () {
+  res.end('city does not exist');
+})
 }
 function noPageHandler(req,res) {
   res.writeHead(404, { 'Content-Type': 'text/html'});
