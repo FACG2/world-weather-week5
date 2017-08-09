@@ -1,6 +1,6 @@
 
 
-/*Start general rules*/
+/*Start  general rules*/
 body{
 	background-color: #84BEE7;
 	margin: 0;
@@ -178,7 +178,7 @@ input::-webkit-calendar-picker-indicator {
 		margin: 10px 0 0 0;
 	}
 	#serchButton, #cityName{
-		border-radius: 3px;	
+		border-radius: 3px;
 	}
 }
 /*start responsive ruls*/
