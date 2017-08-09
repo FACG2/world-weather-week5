@@ -1,0 +1,40 @@
+
+
+/*Start general rules*/
+body{
+	background-color: #44A9F1;
+	margin: 0;
+	line-height: 1.42857143;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+.container{
+	width: 72%;
+	margin: 0 auto;
+}
+
+
+
+
+/*End general rules*/
+
+/*Start Title rules*/
+h1{
+	font-family: 'Sedgwick Ave Display', cursive;
+	text-align: center;
+    margin: 125px 0 20px 0;
+    font-size: 62px;
+    text-shadow: 4px 4px 5px #0371BE;
+
+}
+
+
+/*End Title rules*/
+
+
+#seach-form{
+	font-size: 0;
+	text-align: center;
+   
+
+}
