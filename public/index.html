@@ -6,11 +6,25 @@
   <title>World Weather</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="public/css/stylesheet.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display|Droid+Sans" rel="stylesheet">
+
 </head>
 
 <body>
+	<div class="container">
+		<div id="div-form">
+			<h1>World weather</h1>
+			<form id="seach-form">
+		        <input id="cityName" list="citieslist" placeholder="city name" type="text" name="cityname" value="" required>
+		        <datalist id="citieslist">
+		        </datalist>
+		        <button id="serchButton" type="submit" name="">Search</button>
+		    </form>
+		</div>
+		<div id="cityWeather">
 
-
+		</div>
+	</div>
   <script src="public/js/request.js"></script>
   <script src="public/js/index.js"></script>
 

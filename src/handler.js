@@ -50,20 +50,26 @@ allData+=chunk;
   });
   req.on('end',function () {
 result=functions.getCityIdBycityName(allData);
+
 if (result===-1) {
   res.end('city does not exist');
 }
+
+
+else{
+request.apiRequest(result,function (body) {
+
+  res.end(JSON.stringify(body));
+  });}
+});
+
 req.on('error',function () {
   res.end('city does not exist');
 })
-request.apiRequest(result,function (body) {
-  res.end(JSON.stringify(body));
-  });
-});
 }
 function noPageHandler(req,res) {
   res.writeHead(404, { 'Content-Type': 'text/html'});
- res.end('<h1>Not found</h1>');
+ res.end('<center><h1>404 Page Not found</h1></center>');
 }
 module.exports={
   publicHandler,
