@@ -47,9 +47,12 @@ allData+=chunk;
   });
   req.on('end',function () {
 result=functions.getCityIdBycityName(allData);
-  });
+if (result===-1) {
+  res.end('city does not exist');  
+}
 request.apiRequest(result,function (body) {
   res.end(JSON.stringify(body));
+  });
 });
 }
 function noPageHandler(req,res) {
