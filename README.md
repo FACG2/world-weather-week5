@@ -1,3 +1,7 @@
+![alt text](https://api.travis-ci.org/FACG2/world-weather-week5.svg?branch=master "Logo Title Text 1")
+
+
+
 # world-weather-week5
 a web app to get current weather in every city in the world.
 
@@ -33,6 +37,14 @@ An app that uses  API to display current and tommorrow weather data for any city
 - Set up Heroku
 - Add styling and DOM manipulation to display data
 
+## Code coverage
+![alt text](img/codecover-5.png "Logo Title Text 1")
+
+## Continuous integration
+![alt text](img/ci3.png "Logo Title Text 1")
+
+![alt text](img/ci-4.png "Logo Title Text 1")
+
 ### Installation instructions
  git clone `https://github.com/FACG2/MarvelCode-Week4`
 
@@ -42,6 +54,9 @@ An app that uses  API to display current and tommorrow weather data for any city
 
 Navigate to http://localhost:4000/ in your browser
 
-[check the site](https://world-weather-week5.herokuapp.com/)
+[check the site]("https://weathergaza.herokuapp.com/")
+
+
+
 
 >Done By : Abdallah,Hana,Mahmoud,Salwa
