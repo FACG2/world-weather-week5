@@ -63,7 +63,6 @@ function submitHandler(req, res) {
             'today': today,
             'tommorrow': tommorrow
           }
-          console.log(body);
           res.end(JSON.stringify(body));
 
 
