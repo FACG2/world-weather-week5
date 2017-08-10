@@ -46,7 +46,7 @@ An app that uses  API to display current and tommorrow weather data for any city
 ![alt text](img/ci-4.png "Logo Title Text 1")
 
 ### Installation instructions
- git clone `https://github.com/FACG2/MarvelCode-Week4`
+ git clone `https://github.com/FACG2/world-weather-week5`
 
   Run `npm install` to install all dependencies`
 
@@ -54,7 +54,7 @@ An app that uses  API to display current and tommorrow weather data for any city
 
 Navigate to http://localhost:4000/ in your browser
 
-[check the site]("https://weathergaza.herokuapp.com/")
+[check the site](https://weathergaza.herokuapp.com/)
 
 
 
