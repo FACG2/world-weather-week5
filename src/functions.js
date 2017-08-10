@@ -1,25 +1,21 @@
-var list = require('../lib/list.json');
-
-
-function getTenCities(input){
+function getTenCities(input,data){
   var arr = [];
-  for (var i = 0; i < list.length; i++) {
-    if(list[i].name.toLowerCase().startsWith(input.toLowerCase())){
-      arr.push(list[i].name + "," + list[i].country);
+  for (var i = 0; i < data.length; i++) {
+    if(data[i].name.toLowerCase().startsWith(input.toLowerCase())){
+      arr.push(data[i].name + "," + data[i].country);
     }
     if (arr.length ==10) break;
   }
   return arr;
 }
 
-function getCityIdBycityName(input){
+function getCityIdBycityName(input,data){
 var sp = input.split(',');
 var cityName = sp[0];
 var countryName = sp[1];
 
-for (var i = 0; i < list.length; i++) {
-  if(list[i].name === cityName && list[i].country === countryName) return list[i].id;
-
+for (var i = 0; i < data.length; i++) {
+  if(data[i].name === cityName && data[i].country === countryName) return data[i].id;
 }
 return -1;
 }

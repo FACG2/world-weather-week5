@@ -1,6 +1,7 @@
 var functions = require('./functions.js');
 const fs = require('fs');
 const request = require('./request.js');
+var list = require('../lib/list.json');
 
 function publicHandler(req, res) {
   var url = req.url;
@@ -37,7 +38,7 @@ function searchHandler(req, res) {
     allData += chunk;
   });
   req.on('end', function() {
-    var result = functions.getTenCities(allData);
+    var result = functions.getTenCities(allData,list);
     res.end(JSON.stringify(result));
   });
   req.on('error', function() {
@@ -52,7 +53,7 @@ function submitHandler(req, res) {
     allData += chunk;
   });
   req.on('end', function() {
-    result = functions.getCityIdBycityName(allData);
+    result = functions.getCityIdBycityName(allData,list);
 
     if (result === -1) {
       res.end(JSON.stringify('city does not exist'));
