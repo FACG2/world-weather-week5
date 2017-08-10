@@ -20,7 +20,7 @@ An app that uses  API to display current and tommorrow weather data for any city
 - [x] Consider a good server file structure based on what we have discussed over the week.
 - [x] Employ continuous integration on your project with Travis or a similar tool.
 - [x] Use CodeCov or a similar tool for test coverage.
-- [x] Display continuous integration and code coverage badges on your project README.
+- [ ] Display continuous integration and code coverage badges on your project README.
 - [x] Ensure that errors are handled, if for example a user attempts to make a request to a non-existent route to your server, provide the user with a custom response.
 
 
