@@ -1,13 +1,11 @@
 var test = require('tape');
 var functions = require('../src/functions.js');
-
+var sampleData = require('./sampleData.json');
 
 test('get first 10 matches', (t) => {
-  var actual = functions.getTenCities("l");
+  var actual = functions.getTenCities("l",sampleData);
   var expected = ['Laspi,UA', 'Lichtenrade,DE', 'Lhasa,CN',
-    'Land Nordrhein-Westfalen,DE', 'Lisbon,PT', 'La Portanière,FR',
-    'Lede,BE', 'Laval,CA', 'Lusambo,CD', 'Luebo,CD'
-  ];
+   'Land Nordrhein-Westfalen,DE', 'Lisbon,PT'];
 
 
   t.deepEqual(actual, expected, 'should return an array of 10 city names');
@@ -15,8 +13,8 @@ test('get first 10 matches', (t) => {
 });
 
 test('get city id', (t) => {
-  var actual = functions.getCityIdBycityName('London,GB');
-  var expected = 2643743;
+  var actual = functions.getCityIdBycityName('Novinki,RU',sampleData);
+  var expected = 519188;
   t.deepEqual(actual, expected, `should return ${expected}`);
   t.end();
 });
